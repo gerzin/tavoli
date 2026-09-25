@@ -1,7 +1,6 @@
 import { type Table } from './table.types'
 
 export abstract class AbstractTableFactory<T> {
-
     abstract createEmptyTable(): Table<T>
     /**
      * Get the capacity of the tables created by this factory.
@@ -11,8 +10,6 @@ export abstract class AbstractTableFactory<T> {
     protected generateId(): string {
         return crypto.randomUUID()
     }
-
-
 }
 
 export class TablesWithCapacityFactory<T> extends AbstractTableFactory<T> {
@@ -34,5 +31,4 @@ export class TablesWithCapacityFactory<T> extends AbstractTableFactory<T> {
     getCapacity(): number {
         return this.capacity
     }
-
 }

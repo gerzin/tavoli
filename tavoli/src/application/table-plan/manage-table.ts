@@ -1,5 +1,8 @@
-import { type Table, } from '../../../src/domain/table/table.types'
-import { isTableFull, isTableEmpty } from '../../../src/domain/table/table.rules'
+import { type Table } from '../../../src/domain/table/table.types'
+import {
+    isTableFull,
+    isTableEmpty,
+} from '../../../src/domain/table/table.rules'
 
 /**
  * Error thrown when attempting to add a seat to a full table.
@@ -31,7 +34,7 @@ export function addSeatToTable<T>(table: Table<T>, seat: T): Table<T> {
     }
     return {
         ...table,
-        seats: [...table.seats, seat]
+        seats: [...table.seats, seat],
     }
 }
 
@@ -45,6 +48,6 @@ export function removeSeatFromTable<T>(table: Table<T>, seat: T): Table<T> {
     }
     return {
         ...table,
-        seats: table.seats.filter(s => s !== seat)
+        seats: table.seats.filter((s) => s !== seat),
     }
 }

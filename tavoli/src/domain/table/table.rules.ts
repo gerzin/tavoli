@@ -1,6 +1,5 @@
 import { type Table } from './table.types'
 
-
 /**
  * Check if a table is full
  */

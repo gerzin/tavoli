@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: bun --cwd tavoli run format:write
+        language: system
+        pass_filenames: false
+        files: ^tavoli/.*\.(css|html|js|jsx|json|md|ts|tsx|ya?ml)$
